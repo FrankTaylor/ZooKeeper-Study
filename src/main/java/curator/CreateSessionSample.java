@@ -13,6 +13,13 @@ import org.apache.curator.framework.state.ConnectionState;
 import org.apache.curator.framework.state.ConnectionStateListener;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 
+/**
+ * 简单地创建 zookeeper 会话。
+ * 
+ * @author FrankTaylor <mailto:franktaylor@163.com>
+ * @since 2015/10/8
+ * @version 1.0
+ */
 public class CreateSessionSample {
 	
 	public static void main(String[] args) {
@@ -21,9 +28,10 @@ public class CreateSessionSample {
 		CuratorFramework client1 = createCuratorFramework();
 		CuratorFramework client2 = createCuratorFrameworkWithFluentStyle();
 		
+		// 使用“单线程池”作用于各个监听器，以便方便观察输出。
 		ExecutorService exec = Executors.newSingleThreadExecutor();
-		// --- 给 CuratorFramework 的客户端加上连接状态监听器  ---
 		
+		// --- 给 CuratorFramework 的客户端加上连接状态监听器  ---
 		System.out.println("给 CuratorFramework 的对象 client1 加上连接状态监听器！");
 		client1.getConnectionStateListenable().addListener(new ConnectionStateListener() {
 			@Override
