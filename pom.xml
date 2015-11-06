@@ -62,6 +62,7 @@
     </plugins>
   </build>
   
+  <!--
   <pluginRepositories>
     <pluginRepository>
 	  <id>public</id>
@@ -84,7 +85,8 @@
 	  </snapshots>
 	</pluginRepository>
   </pluginRepositories>
-	
+  -->
+  
   <dependencies>
     
 	<!-- Apache 网络通信框架 -->
